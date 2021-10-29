@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: posts
+spec:
+  containers:
+    - name: posts
+      image: nigm4silmi/posts:0.0.1
