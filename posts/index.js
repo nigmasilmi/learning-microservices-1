@@ -25,7 +25,7 @@ app.post('/posts', async (req, res) => {
   const id = randomBytes(4).toString('hex');
   posts[id] = { id, title };
   // emitimos el evento hacia el broker
-  await axios.post('http://localhost:8000/events', {
+  await axios.post('http://event-bus-srv:8000/events', {
     type: 'PostCreated',
     data: { id, title },
   });

@@ -54,7 +54,7 @@ app.listen(4002, async () => {
   console.log('Query Service listening on port 4002');
   // ponerse al día
 
-  const res = await axios.get('http://localhost:8000/events');
+  const res = await axios.get('http://event-bus-srv:8000/events');
   for (let event of res.data) {
     console.log('processing event', event.type);
     handleEvent(event.type, event.data);

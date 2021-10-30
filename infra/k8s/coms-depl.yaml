@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: posts-depl
+  name: coms-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: posts
+      app: coms
   template: 
     metadata:
       labels:
-        app: posts
+        app: coms
     spec:
       containers:
-        - name: posts
-          image: nigm4silmi/posts
+        - name: coms
+          image: nigm4silmi/coms
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: posts-clusterip-srv
+  name: coms-srv
 spec:
   selector:
-    app: posts
+    app: coms
   type: ClusterIP
   ports:
-    - name: posts
+    - name: coms
       protocol: TCP
-      port: 4000
-      targetPort: 4000
+      port: 5000
+      targetPort: 5000
