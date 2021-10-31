@@ -5,6 +5,8 @@ import CommentsList from './CommentsList';
 
 const PostList = () => {
   const getPosts = async () => {
+    // la ruta debe cambiar a la ruta especificada en ingress-srv.yaml
+    // en este ejemplo, cambiar localhost:4002 por posts.com
     const result = await axios.get('http://localhost:4002/posts');
     return setPosts(result.data);
   };

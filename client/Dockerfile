@@ -1,5 +1,6 @@
 # Specify the base image
 FROM node:alpine
+ENV CI=true
 # Set the working directory to '/app' in the container
 # All following commands will be issued relative to this dir
 WORKDIR /app

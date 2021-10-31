@@ -5,7 +5,9 @@ const PostCreate = () => {
   const [title, setTitle] = useState('');
   const onSubmit = async (event) => {
     event.preventDefault();
-    await axios.post('http://localhost:4000/posts', {
+    // la ruta debe cambiar a la ruta especificada en ingress-srv.yaml
+    // en este ejemplo, cambiar localhost:4000 por posts.com
+    await axios.post('http://localhost:4000/posts/create', {
       title,
     });
     setTitle('');

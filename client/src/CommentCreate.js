@@ -6,6 +6,8 @@ const CommentCreate = ({ postId }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    // la ruta debe cambiar a la ruta especificada en ingress-srv.yaml
+    // en este ejemplo, cambiar localhost:5000 por posts.com
     await axios.post(`http://localhost:5000/posts/${postId}/comments`, {
       content,
     });
